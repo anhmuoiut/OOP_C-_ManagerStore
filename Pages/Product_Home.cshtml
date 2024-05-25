@@ -1,0 +1,42 @@
+@page
+@model EX1_OOP.Pages.Product_Home
+@{
+    ViewData["Title"] = "Product_Home";
+}
+
+<h1>@ViewData["Title"]</h1>
+@if(Model.products != null)
+{
+<div>
+    <form method="post">
+        <input type="text" name="key" value="@Model.key" placeholder="Searching by name:">
+        <input type="submit" name=""></input>
+    </form>
+    <div>
+        <table>
+            <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Actions</th>
+            </tr>
+        @foreach(var prd in Model.products)
+        {
+            <tr>
+                <td>prd.ProductId</td>
+                <td>prd.ProductName</td>
+                <td>prd.ProductPrice</td>
+                <td>
+                    <a href="/Pages/ProductDelete/?=prdId=@prd.ProductId">Delete</a>
+                    <a href="/Pages/ProductEdit/?=prdId=@prd.ProductId">Edit</a>
+                </td>
+            </tr>
+        }
+        </table>
+    </div>
+@if(!string.IsNullOrEmpty(Model.message))
+{
+    <p>@Model.message</p>
+}
+</div>
+}

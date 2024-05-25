@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "7nke/cGewRBRb0yyz4biVUhwvwAaoL/61SkKdT2lCFk8jIA3XvROowCNPNchh3gXBMFkl8IeSe/tKfzJfeVEWQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\2668118\\OneDrive - Jabil\\Desktop\\Visual Studio Code\\EX1_OOP\\EX1_OOP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\2668118\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
