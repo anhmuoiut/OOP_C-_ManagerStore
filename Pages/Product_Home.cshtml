@@ -1,34 +1,37 @@
 @page
+@using EX1_OOP.Entities;
 @model EX1_OOP.Pages.Product_Home
 @{
     ViewData["Title"] = "Product_Home";
 }
 
 <h1>@ViewData["Title"]</h1>
+    <form method="post">
+        <input type="text" name="key" value="@Model.key" placeholder="Searching by name">
+    </form>
 @if(Model.products != null)
 {
 <div>
-    <form method="post">
-        <input type="text" name="key" value="@Model.key" placeholder="Searching by name:">
-        <input type="submit" name=""></input>
-    </form>
+    <a href="/ProductAdd">Add items</a>
     <div>
         <table>
             <tr>
                 <th>Product Id</th>
                 <th>Product Name</th>
                 <th>Product Price</th>
+                <th>Total</th>
                 <th>Actions</th>
             </tr>
         @foreach(var prd in Model.products)
         {
             <tr>
-                <td>prd.ProductId</td>
-                <td>prd.ProductName</td>
-                <td>prd.ProductPrice</td>
+                <td>@prd.ProductId</td>
+                <td>@prd.ProductName</td>
+                <td>@prd.ProductPrice</td>
+                <td>@prd.CountOfProducts</td>
                 <td>
-                    <a href="/Pages/ProductDelete/?=prdId=@prd.ProductId">Delete</a>
-                    <a href="/Pages/ProductEdit/?=prdId=@prd.ProductId">Edit</a>
+                    <a href="/ProductDelete?ProductId=@prd.ProductId">Delete</a>
+                    <a href="/ProductEdit?ProductId=@prd.ProductId">Edit</a>
                 </td>
             </tr>
         }

@@ -9,5 +9,8 @@ namespace EX1_OOP.Repositories
     {
         void SaveProduct (List<Product> products);
         List<Product> ReadProduct();
+        bool AddProduct(Product prd);
+        bool DeleteProduct(int id);
+        bool EditProduct(Product prd);
     }
 }

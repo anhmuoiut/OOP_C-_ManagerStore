@@ -34,5 +34,61 @@ namespace EX1_OOP.Repositories
                 throw new Exception("invalid path "+ ex.Message);
             }
         }
+        public bool AddProduct(Product prd)
+        {
+            List<Product> prds = ReadProduct();
+            if(prd == null)
+            {
+                return false;
+            }
+            if(prds == null)
+            {
+                prds = new List<Product>();
+            }
+            prds.Add(prd);
+            SaveProduct(prds);
+            return true;
+        }
+        public bool DeleteProduct(int id)
+        {
+            List<Product> prds = ReadProduct();
+            if(prds == null)
+            {
+                return false;
+            }
+            int df = prds.Count;
+            int index = prds.FindIndex(p =>p.ProductId == id);
+            if(index != -1)
+            {
+                prds.RemoveAt(index);
+            }
+            if(df == prds.Count)
+            {
+                return false;
+            }
+            SaveProduct(prds);
+            return true;
+        }
+        public bool EditProduct(Product prd)
+        {
+            List<Product> prds = ReadProduct();
+            if(prds == null)
+            {
+                return false;
+            }
+            int index = prds.FindIndex(p => p.ProductId == prd.ProductId);
+            if(index != -1)
+            {
+                prds[index].ProductName = prd.ProductName;
+                prds[index].ProductPrice = prd.ProductPrice;
+                prds[index].CountOfProducts = prd.CountOfProducts;
+            }
+            else
+            {
+                return false;
+            }
+            SaveProduct(prds);
+            return true;
+        }
     }
 }

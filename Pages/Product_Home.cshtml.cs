@@ -24,14 +24,14 @@ public string message = string.Empty;
 [BindProperty]
 public string key {get;set;} = string.Empty;
 
-public List<Product> products = new List<Product>();
+public List<Product>? products;
         public void OnGet()
         {
-            products = _Services.GetAllProducts();
+            products = _Services.GetAllProducts(key);
         }
         public void OnPost()
         {
-            products = _Services.GetAllProducts(key) ?? "";
+            products = _Services.GetAllProducts(key);
         }
     }
 }

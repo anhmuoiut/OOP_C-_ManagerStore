@@ -1,0 +1,21 @@
+@page
+@model EX1_OOP.Pages.ProductAdd
+@{
+    ViewData["Title"] = "Add Item";
+}
+
+<h1>Add Product</h1>
+
+<div>
+    <form method="post">
+        
+        <label for="ProductId"> Product Name</label><br>
+        <input type="text" placeholder="abcxyz" name="productName" required><br>
+        <label for="productPrice"> Price</label><br>
+        <input type="text" placeholder="$" name="productPrice" required><br><br>
+        <label for="countOfProducts"> Count of product</label><br>
+        <input type="text"  name="countOfProducts" value="@Model.countOfProducts" required><br>
+        <input type="submit" value="OK">
+    </form>
+</div>
+<p>@Model.message</p>

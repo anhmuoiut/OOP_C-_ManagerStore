@@ -1,0 +1,14 @@
+[
+  {
+    "ProductId": 1,
+    "ProductName": "Beer",
+    "ProductPrice": 15.0,
+    "CountOfProducts": 100
+  },
+  {
+    "ProductId": 2,
+    "ProductName": "Nước chảy",
+    "ProductPrice": 15.0,
+    "CountOfProducts": 111
+  }
+]

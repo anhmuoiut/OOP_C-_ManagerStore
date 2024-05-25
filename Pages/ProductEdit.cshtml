@@ -1,0 +1,20 @@
+@page
+@model EX1_OOP.Pages.ProductEdit
+@{
+    ViewData["Title"] = "Edit Page";
+}
+
+<h1>Edit Product</h1>
+
+<div>
+    <form method="post">
+        <label for="ProductId"> Product Name</label><br>
+        <input type="text"  name="ProductName" value="@Model.product.ProductName" required><br>
+        <label for="ProductPrice"> Price</label><br>
+        <input type="text"  name="ProductPrice" value="@Model.product.ProductPrice" required><br><br>
+        <label for="CountOfProducts"> Count of product</label><br>
+        <input type="text"  name="CountOfProducts" value="@Model.product.CountOfProducts" required><br>
+        <input type="submit" value="Done">
+    </form>
+</div>
+<p>@Model.message</p>
